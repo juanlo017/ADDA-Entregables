@@ -30,6 +30,12 @@ public class ejercicio2 {
 		return res;
 	}
 	//recursivo
+	public static Map<Integer, List<String>> recursivo (List<List<String>> ls){
+		Map<Integer, List<String>> m = new HashMap<>();
+		Integer i = 0;
+		return recursivo(ls, i, m);
+	}
+	
 	public static Map<Integer, List<String>> recursivo (List<List<String>> ls, Integer i,Map<Integer, List<String>> m){
 		if(i < ls.size()) {
 			Integer e = 0;
@@ -50,6 +56,8 @@ public class ejercicio2 {
 		}
 		return m;
 	}
+	
+	
 	//funcional
 	public static Map<Integer, List<String>> funcional (List<List<String>> ls){
 		return ls.stream()

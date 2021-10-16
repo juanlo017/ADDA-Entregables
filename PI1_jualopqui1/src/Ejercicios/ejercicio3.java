@@ -26,6 +26,14 @@ public class ejercicio3 {
 	}
 	
 	//recursivo
+	public static String recursivo(Integer a, Integer limit) {
+		
+		List<Par> pairList = new ArrayList<>();
+		Integer i = 0;
+		
+		return recursivo(a, limit, i, pairList);
+	}
+	
 	public static String recursivo(Integer a, Integer limit, Integer i, List<Par> pairList) {
 		
 		Par numberPair = Par.of(i, a);
