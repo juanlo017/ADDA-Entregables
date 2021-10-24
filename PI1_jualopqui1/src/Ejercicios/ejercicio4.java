@@ -71,30 +71,6 @@ public class ejercicio4 {
 							.findFirst()
 							.get();
 		return res.medio();			
-							
-/*
-   record Te(T t, B b, X x){
-	public static Te of(T t, B b, X x){
-		return new Te(t, b, x);
-	}
-	public Te next(){
-		E e = nx1(t); actual
-		t = nx2(t);	proximo   
- 	 	b = c’(b,e); calculo del acumulador
-		return Te.of(t,b,x); devuelve el prox
-	}
-}
-R alg(X x) {
-	T t = it(x);
-	B b = b0;
-	Te r = Stream.iterate(Te.of(t,b,x),t->t.next()).
-		.filter(t->!(hn(t) && !f(b))
-		.findFirst()
-		.get();
-	b = c’(r.b(),sb(x,r.t()));
-	return r(b);
-}
-*/
 	}
 
 }

@@ -1,4 +1,4 @@
 module PI1_jualopqui1 {
-	requires partecomun;
-	requires datos_compartidos;
+	requires transitive partecomun;
+	requires transitive datos_compartidos;
 }

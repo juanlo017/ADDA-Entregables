@@ -20,16 +20,15 @@ public class Test {
 	public static void main(String[] args) {
 		System.out.println("EJERCICIO 1");
 		List<List<String>> fileTest1 = leeFichero(".\\ficheros\\PI1E1_DatosEntrada.txt");
-		//test1(fileTest1);	
+		test1(fileTest1);	
 		System.out.println("EJERCICIO 2");
 		List<List<String>> fileTest2 = leeFichero(".\\ficheros\\PI1E2_DatosEntrada1.txt");
-		//test2(fileTest2);
+		test2(fileTest2);
 		System.out.println("EJERCICIO 3");
 		List<List<String>> fileTest3 = leeFichero(".\\ficheros\\PI1E3_DatosEntrada.txt");
-		//test3(fileTest3);
+		test3(fileTest3);
 		System.out.println("EJERCICIO 4");
 		List<List<String>> fileTest4 = leeFichero(".\\ficheros\\PI1E4_DatosEntrada.txt");
-		System.out.println(fileTest4);
 		test4(fileTest4);
 		
 	}
