@@ -1,7 +1,5 @@
 package Ejercicios;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ejercicio4 {
@@ -16,7 +14,7 @@ public class ejercicio4 {
 		Double medio = 0.;
 		Double error = 2.;
 		
-		while(error > e) {
+		while(error >= e) {
 		
 	            medio = (inicioIntervalo + finIntervalo)/2;
 	     
@@ -43,7 +41,7 @@ public class ejercicio4 {
 	
 	public static Double recursivo(Double n, Double e, Double inicioIntervalo, Double finIntervalo, Double medio, Double error) {
 		
-		if( error > e) {
+		if(error >= e) {
 			
 			medio = (inicioIntervalo + finIntervalo)/2;
 		     
@@ -63,13 +61,40 @@ public class ejercicio4 {
 	
 	//funcional
 	public static Double funcional (Double n, Double e) {
-		return 0.;
-				
-				
-//				.iterate(Par.of(0, a),
-//				t-> t.v1() < limit,
-//				t-> Par.of(t.v1()+1, t.v1() % 3 == 1 ? t.v2() : t.v1() + t.v2()))
-//				.collect(Collectors.toList())
-//				.toString();
+		Double inicioIntervalo = 0.;
+		Double finIntervalo = n;
+		Double medio = 0.;
+		Double error = 2.;
+		
+		TuplaFuncional4 res = Stream.iterate(TuplaFuncional4.of(n, e, inicioIntervalo, finIntervalo, medio, error), tupla -> tupla.next())
+							.filter(x -> !(x.error() >= x.e()))
+							.findFirst()
+							.get();
+		return res.medio();			
+							
+/*
+   record Te(T t, B b, X x){
+	public static Te of(T t, B b, X x){
+		return new Te(t, b, x);
 	}
+	public Te next(){
+		E e = nx1(t); actual
+		t = nx2(t);	proximo   
+ 	 	b = c’(b,e); calculo del acumulador
+		return Te.of(t,b,x); devuelve el prox
+	}
+}
+R alg(X x) {
+	T t = it(x);
+	B b = b0;
+	Te r = Stream.iterate(Te.of(t,b,x),t->t.next()).
+		.filter(t->!(hn(t) && !f(b))
+		.findFirst()
+		.get();
+	b = c’(r.b(),sb(x,r.t()));
+	return r(b);
+}
+*/
+	}
+
 }

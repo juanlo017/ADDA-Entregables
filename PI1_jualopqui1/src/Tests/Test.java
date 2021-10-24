@@ -1,29 +1,32 @@
 package Tests;
 
+import us.lsi.common.Files2;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
 import Ejercicios.ejercicio1;
 import Ejercicios.ejercicio2;
 import Ejercicios.ejercicio3;
 import Ejercicios.ejercicio4;
-import us.lsi.common.Files2;
+
+
+
+
 
 public class Test {
 	
 	public static void main(String[] args) {
-//		System.out.println("EJERCICIO 1");
-//		List<List<String>> fileTest1 = leeFichero(".\\ficheros\\PI1E1_DatosEntrada.txt");
-//		test1(fileTest1);	
-//		System.out.println("EJERCICIO 2");
-//		List<List<String>> fileTest2 = leeFichero(".\\ficheros\\PI1E2_DatosEntrada1.txt");
-//		test2(fileTest2);
-//		System.out.println("EJERCICIO 3");
-//		List<List<String>> fileTest3 = leeFichero(".\\ficheros\\PI1E3_DatosEntrada.txt");
-//		test3(fileTest3);
+		System.out.println("EJERCICIO 1");
+		List<List<String>> fileTest1 = leeFichero(".\\ficheros\\PI1E1_DatosEntrada.txt");
+		//test1(fileTest1);	
+		System.out.println("EJERCICIO 2");
+		List<List<String>> fileTest2 = leeFichero(".\\ficheros\\PI1E2_DatosEntrada1.txt");
+		//test2(fileTest2);
+		System.out.println("EJERCICIO 3");
+		List<List<String>> fileTest3 = leeFichero(".\\ficheros\\PI1E3_DatosEntrada.txt");
+		//test3(fileTest3);
 		System.out.println("EJERCICIO 4");
 		List<List<String>> fileTest4 = leeFichero(".\\ficheros\\PI1E4_DatosEntrada.txt");
 		System.out.println(fileTest4);
@@ -88,7 +91,7 @@ public class Test {
 			System.out.println( "Raiz cubica de: " + n + " con error menor que: " + e + "\n" + 
 					"Iterativa: " + ejercicio4.iterativo(n, e) + "\n" +
 					"Recursiva:" + ejercicio4.recursivo(n, e) + "\n" +
-					"Funcional: " + ejercicio4.funcional(n, e));
+				    "Funcional: " + ejercicio4.funcional(n, e));
 		}
 	}
 	
