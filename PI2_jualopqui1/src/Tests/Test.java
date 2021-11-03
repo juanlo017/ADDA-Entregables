@@ -24,9 +24,9 @@ public class Test {
 		List<List<String>> file3 = leeFicheroEjercicio3(".\\ficheros\\PI2Ej3DatosEntrada.txt");
 		//test3(file3);
 		List<List<String>> file4 = leeFicheroEjercicio4(".\\ficheros\\PI2Ej4DatosEntrada.txt");
-		test4(file4);
+		//test4(file4);
 		List<List<String>> file5 = leeFichero(".\\ficheros\\PI2Ej5DatosEntrada.txt");
-		//test5(file5);
+		test5(file5);
 	}
 	
 	private static void test1(List<List<String>> file) {
@@ -38,7 +38,7 @@ public class Test {
 						"Iterativo: " + Ejercicio1.iterativo(a, b, c) + "\n" +
 						"Recursivo no final: " + Ejercicio1.recursivoNoFinal(a, b, c)+ "\n" +
 						"Recursivo final: " + Ejercicio1.recursivoFinal(a, b, c) + "\n" +
-						"Funcional: " + "\n");
+						"Funcional: " + Ejercicio1.funcional(a, b, c));
 		}
 	}
 	
@@ -71,7 +71,7 @@ public class Test {
 			System.out.println("Entrada: "+ n + "\n" + 
 			"Recursivo sin memoria: " + Ejercicio4.recursivoSinMemoria(n) + "\n" +
 			"Recursivo con memoria: " + Ejercicio4.recursivoConMemoria(n) + "\n" +
-			"Iterativo: " + Ejercicio4.iterativo(n));
+			"Iterativo: "+ Ejercicio4.iterativo(n));
 		}
 	}
 	

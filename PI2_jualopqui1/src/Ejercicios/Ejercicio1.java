@@ -83,11 +83,20 @@ else ----------------------------- a+b+c + f(a/3, b-3, c/3)
 		return res;
 	}
 	
-//	public static String funcional(Integer a, Integer b, Integer c) {
-//		String s = "";
-//		String res = Stream.iterate(tuplaEjercicio1.of(s, a, b, c), x -> x.next())
-//									.filter(x -> !(x.a()<3 &&  x.b()<3 &&  x.c()<3) && !(x.a()<5 || x.b()<5 || x.c()<5))					
-//	}
+	public static String funcional(Integer a, Integer b, Integer c) {
+		String s = "";
+		tuplaEjercicio1 tupla = Stream.iterate(tuplaEjercicio1.of(s, a, b, c), x -> x.next())
+						.filter(x -> (x.a()<3 &&  x.b()<3 &&  x.c()<3) || (x.a()<5 || x.b()<5 || x.c()<5))
+						.findFirst()
+						.get();
+		String res = tupla.res();
+		if(tupla.a()<3 &&  tupla.b()<3 &&  tupla.c()<3) {
+			res = String.format("%s(%s)", res, String.valueOf(tupla.a()*tupla.b()*tupla.c()));
+		}else {
+			res = String.format("%s(%s)", res, String.valueOf(tupla.a()+tupla.b()+tupla.c()));
+		}
+		return res;
+	}
 	
 	
 	

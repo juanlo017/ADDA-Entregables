@@ -38,10 +38,10 @@ public class Ejercicio5 {
 			memoria.put(problemaActual, res);
 		}else {
 			if(a%b == 0) {
-				res = recursivoSinMemoria(res, a-1,b/2,c/2) + recursivoSinMemoria(res,a-3,b/3,c/3);
+				res = recursivoConMemoria(res, memoria, a-1,b/2,c/2) + recursivoConMemoria(res, memoria,a-3,b/3,c/3);
 				memoria.put(problemaActual, res);
 			}else {
-				res = recursivoSinMemoria(res,a/3,b-3,c-3) + recursivoSinMemoria(res,a/2,b-2,c-2);
+				res = recursivoConMemoria(res, memoria,a/3,b-3,c-3) + recursivoConMemoria(res, memoria,a/2,b-2,c-2);
 				memoria.put(problemaActual, res);
 			}
 		}
@@ -49,13 +49,19 @@ public class Ejercicio5 {
 	}
 	
 //	public static Integer iterativo(Integer a, Integer b, Integer c) {
-//		Integer res = 0;
-//		while(!(a<3 || b<3 || c<3)) {
-//			
+//		Map<List<Integer>,Integer> memoria = new HashMap<>();
+//		if(a<3 || b<3 || c<3) {
+//			res = a + b*b + 2*c;
+//		}else {
+//			if(a%b == 0) {
+//				res = recursivoSinMemoria(res, a-1,b/2,c/2) + recursivoSinMemoria(res,a-3,b/3,c/3);
+//			}else {
+//				res = recursivoSinMemoria(res,a/3,b-3,c-3) + recursivoSinMemoria(res,a/2,b-2,c-2);
+//			}
 //		}
 //		
 //	}
-	
+//	
 	
 	
 }

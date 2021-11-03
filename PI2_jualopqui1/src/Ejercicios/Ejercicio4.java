@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*f0=2
- * f1=5
+ * f1=4
  * f2=6
  * 
  * fn=2fn-1 + 4fn-2 + 6fn-3
@@ -44,28 +44,34 @@ public class Ejercicio4 {
 		}else if(n==0){
 			res = 2L;
 		}else {
-			res = 2*recursivoSinMemoria(n-1, res) + 4*recursivoSinMemoria(n-2, res) + 6*recursivoSinMemoria(n-3, res);
+			res = 2*recursivoConMemoria(n-1, res, memoria) + 4*recursivoConMemoria(n-2, res, memoria) + 6*recursivoConMemoria(n-3, res, memoria);
+			memoria.put(n, res);
 		}
 		return res;
 	}
+//         igual que fibonacci (MIRAR FIBONACCI ITERATIVO)
 	
 	public static Long iterativo(Integer n) {
 		Long res = 0L;
-		Integer i = 0;
+		Integer i = 0; 
 		Map<Integer, Long> memoria = new HashMap<>();
-		memoria.put(0, 2L);
-		memoria.put(1, 4L);
-		memoria.put(2, 6L);
+		
 		while(i <= n) {
-			if(memoria.containsKey(i)) {
-				res = res + memoria.get(i);
-			}else {
-				Long valor = 2*memoria.get(i-1) + 4*memoria.get(i-2) + 6*memoria.get(i-3);
-				res = res + valor;
+			if(i==2) {
+				memoria.put(i, 6L);
+			}else if(i==1){
+				memoria.put(i, 4L);
+			}else if(i==0){
+				memoria.put(i, 2L);
+			}else{
+				Long valor = 2L*memoria.get(i-1) + 4L*memoria.get(i-2) + 6L*memoria.get(i-3);
+				res += valor;
 				memoria.put(i, valor);
+				memoria.remove(i-4); //quitamos los valores que no interesan y ocupan espacio de memoria
 			}
 			i++;
 		}
-		return res;
-	}
+		return memoria.get(n);
+	}		
+	
 }
