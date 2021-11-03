@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import Ejercicios.Ejercicio1;
 import Ejercicios.Ejercicio2;
 import Ejercicios.Ejercicio3;
+import Ejercicios.Ejercicio4;
 import Ejercicios.Ejercicio5;
 import us.lsi.common.Files2;
 import us.lsi.common.Matrix;
@@ -23,9 +24,9 @@ public class Test {
 		List<List<String>> file3 = leeFicheroEjercicio3(".\\ficheros\\PI2Ej3DatosEntrada.txt");
 		//test3(file3);
 		List<List<String>> file4 = leeFicheroEjercicio4(".\\ficheros\\PI2Ej4DatosEntrada.txt");
-		//test4(file4);
+		test4(file4);
 		List<List<String>> file5 = leeFichero(".\\ficheros\\PI2Ej5DatosEntrada.txt");
-		test5(file5);
+		//test5(file5);
 	}
 	
 	private static void test1(List<List<String>> file) {
@@ -67,7 +68,10 @@ public class Test {
 	private static void test4(List<List<String>> file) {
 		for (List<String> i : file) {
 			Integer n = Integer.valueOf(i.get(1));
-			System.out.println(n);
+			System.out.println("Entrada: "+ n + "\n" + 
+			"Recursivo sin memoria: " + Ejercicio4.recursivoSinMemoria(n) + "\n" +
+			"Recursivo con memoria: " + Ejercicio4.recursivoConMemoria(n) + "\n" +
+			"Iterativo: " + Ejercicio4.iterativo(n));
 		}
 	}
 	
