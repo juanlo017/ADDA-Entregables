@@ -19,7 +19,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		List<List<String>> file1 = leeFichero(".\\ficheros\\PI2Ej1DatosEntrada.txt");
 		//test1(file1);
-		List<List<String>> file2 = leeFicheroEjercicio2(".\\ficheros\\PI2Ej2DatosEntrada2.txt");
+		List<List<String>> file2 = leeFicheroEjercicio2(".\\ficheros\\PI2Ej2DatosEntrada1.txt");
 		//test2(file2);
 		List<List<String>> file3 = leeFicheroEjercicio3(".\\ficheros\\PI2Ej3DatosEntrada.txt");
 		//test3(file3);

@@ -3,13 +3,6 @@ package Ejercicios;
 import java.util.HashMap;
 import java.util.Map;
 
-/*f0=2
- * f1=4
- * f2=6
- * 
- * fn=2fn-1 + 4fn-2 + 6fn-3
- * 
- * */
 public class Ejercicio4 {
 	public static Long recursivoSinMemoria(Integer n) {
 		Long res = 0L;
@@ -49,7 +42,7 @@ public class Ejercicio4 {
 		}
 		return res;
 	}
-//         igual que fibonacci (MIRAR FIBONACCI ITERATIVO)
+
 	
 	public static Long iterativo(Integer n) {
 		Long res = 0L;
