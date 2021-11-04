@@ -48,20 +48,33 @@ public class Ejercicio5 {
 		return res;
 	}
 	
-//	public static Integer iterativo(Integer a, Integer b, Integer c) {
-//		Map<List<Integer>,Integer> memoria = new HashMap<>();
-//		if(a<3 || b<3 || c<3) {
-//			res = a + b*b + 2*c;
-//		}else {
-//			if(a%b == 0) {
-//				res = recursivoSinMemoria(res, a-1,b/2,c/2) + recursivoSinMemoria(res,a-3,b/3,c/3);
-//			}else {
-//				res = recursivoSinMemoria(res,a/3,b-3,c-3) + recursivoSinMemoria(res,a/2,b-2,c-2);
-//			}
-//		}
-//		
-//	}
-//	
+	public static Integer iterativo(Integer a, Integer b, Integer c) {
+		Map<List<Integer>,Integer> memoria = new HashMap<>();
+		//bottom up
+		Integer i = 0;
+		while(i<=a) {
+			Integer j = 0;
+			while(j<=b) {
+				Integer k = 0;
+				while(k<=c) {
+					if(i<3 || j<3 || k<3) {
+						Integer res = i + j*j + 2*k;
+						memoria.put(List.of(i,j,k), res);
+					}else if(i%j == 0){
+						Integer res = memoria.get(List.of(i-1,j/2,k/2)) + memoria.get(List.of(i-3,j/3,k/3));
+						memoria.put(List.of(i,j,k), res);
+					}else {
+						Integer res = memoria.get(List.of(i/3,j-3,k-3)) + memoria.get(List.of(i/2,j-2,k-2));
+						memoria.put(List.of(i,j,k), res);
+					}
+					k++;
+				}
+				j++;
+			}
+			i++;
+		}
+		return memoria.get(List.of(a,b,c));
+	}
 	
 	
 }

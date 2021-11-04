@@ -86,6 +86,8 @@ public class Test {
 					Ejercicio5.recursivoSinMemoria(a, b, c) + "\n" +
 					"Recursivo con memoria: " +
 					Ejercicio5.recursivoConMemoria(a, b, c) + "\n" +
+					"Iterativo: " +
+					Ejercicio5.iterativo(a, b, c) + "\n" +
 					"_______________________________________");
 		}
 	}
