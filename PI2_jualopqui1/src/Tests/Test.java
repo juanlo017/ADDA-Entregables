@@ -11,20 +11,19 @@ import Ejercicios.Ejercicio3;
 import Ejercicios.Ejercicio4;
 import Ejercicios.Ejercicio5;
 import us.lsi.common.Files2;
-import us.lsi.common.Matrix;
 
 public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<List<String>> file1 = leeFichero(".\\ficheros\\PI2Ej1DatosEntrada.txt");
-		//test1(file1);
+		test1(file1);
 		List<List<String>> file2 = leeFicheroEjercicio2(".\\ficheros\\PI2Ej2DatosEntrada1.txt");
-		//test2(file2);
+		test2(file2);
 		List<List<String>> file3 = leeFicheroEjercicio3(".\\ficheros\\PI2Ej3DatosEntrada.txt");
-		//test3(file3);
+		test3(file3);
 		List<List<String>> file4 = leeFicheroEjercicio4(".\\ficheros\\PI2Ej4DatosEntrada.txt");
-		//test4(file4);
+		test4(file4);
 		List<List<String>> file5 = leeFichero(".\\ficheros\\PI2Ej5DatosEntrada.txt");
 		test5(file5);
 	}

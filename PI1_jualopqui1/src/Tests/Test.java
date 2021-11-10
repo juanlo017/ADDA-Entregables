@@ -1,22 +1,19 @@
 package Tests;
 
 import us.lsi.common.Files2;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 import Ejercicios.ejercicio1;
 import Ejercicios.ejercicio2;
 import Ejercicios.ejercicio3;
 import Ejercicios.ejercicio4;
 
 
-
-
-
 public class Test {
-	
+
 	public static void main(String[] args) {
 		System.out.println("EJERCICIO 1");
 		List<List<String>> fileTest1 = leeFichero(".\\ficheros\\PI1E1_DatosEntrada.txt");
@@ -32,15 +29,12 @@ public class Test {
 		test4(fileTest4);
 		
 	}
-	
-	
+
 	public static List<List<String>> leeFichero(String file){
 		return Files2.streamFromFile(file).map(f).collect(Collectors.toList());
 	}
 	public static Function<String, List<String>> f = x -> Arrays.stream(x.split(",")).collect(Collectors.toList());
 	
-	
-
 	private static void test1(List<List<String>> file) {
 		
 		Predicate<String> pS = x -> (x.contains("a")||x.contains("e")||x.contains("o"));
@@ -93,6 +87,7 @@ public class Test {
 				    "Funcional: " + ejercicio4.funcional(n, e));
 		}
 	}
+	
 	
 	
 }

@@ -5,3 +5,4 @@ public record Par(Integer v1, Integer v2) {
 		return new Par(a, b);
 	}
 }
+
