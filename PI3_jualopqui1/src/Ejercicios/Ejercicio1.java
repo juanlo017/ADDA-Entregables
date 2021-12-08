@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import us.lsi.tiposrecursivos.Tree;
+import us.lsi.tiposrecursivos.Tree.TreeType;
 
 
 //ordenado: izquierda menores-> derecha mayores
@@ -35,7 +36,7 @@ public class Ejercicio1 {
 	
 	public static<E> Set<E> recursivoFuncional(Tree<E> tree, Predicate<E> p){
 		return tree.stream()
-					.filter(x-> !x.isEmpty())
+					.filter(x-> x.getType().equals(TreeType.Leaf) && !x.isEmpty())
 					.map(x -> x.getLabel())
 					.filter(label -> p.test(label))
 					.collect(Collectors.toSet());
