@@ -13,10 +13,11 @@ import us.lsi.tiposrecursivos.BinaryTree.BinaryType;
 //Map<Paridad,List<Integer>> que incluya las etiquetas de los nodos que tengan 2 hijos 
 //no vacíos, y que cumplan que dicha etiqueta sea mayor que la etiqueta de su hijo izquierdo 
 //y menor que la de su hijo derecho, agrupados teniendo en cuenta si son pares o no. Paridad 
-//es un enumerado con los valores Par e Impar. 
+//es un enumerado con los valores Par e Impar.
+
 public class Ejercicio5 {
 	public enum Paridad{PAR, IMPAR};
-	
+
 	public static Map<Paridad, List<Integer>> recursiva(BinaryTree<Integer> tree) {
 		Map<Paridad, List<Integer>> map = new HashMap<>();
 		return recursivo(tree, map);
@@ -66,7 +67,7 @@ public class Ejercicio5 {
 		
 		return res;
 	}
-		
+
 	private static boolean tieneHijosVacios(BinaryTree<Integer> tree) {
 		BinaryType tipoIzquierda = tree.getLeft().getType();
 		BinaryType tipoDerecha = tree.getRight().getType();
@@ -79,3 +80,16 @@ public class Ejercicio5 {
 		return valorIzq < tree.getLabel() && valorDer > tree.getLabel();
 	}	
 }
+
+
+
+/*
+ * ALTERNATIVO:
+ * 	public static Map<Paridad, List<Integer>> funcional(BinaryTree<Integer> tree) {
+		return tree.stream()
+					.filter(x -> x.getType().equals(BinaryType.Binary) && !tieneHijosVacios(x) && mayorQueIzquierdoMenorQueDerecho(x))
+					.map(x -> x.getLabel())
+					.collect(Collectors.groupingBy(num -> num%2 == 0 ? Paridad.PAR : Paridad.IMPAR, Collectors.toList()));
+	}
+ * */
+ 

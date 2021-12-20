@@ -38,7 +38,4 @@ public class Ejercicio3 {
 		Integer productoMaximo = caminoMaximo.stream().reduce(1, (x, y) -> x * y);
 		return productoActual >= productoMaximo;
 	}	
-
-	
-
 }

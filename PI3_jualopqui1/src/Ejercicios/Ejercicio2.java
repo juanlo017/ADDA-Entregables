@@ -21,7 +21,7 @@ public class Ejercicio2 {
 			break;
 		case Binary:
 			if (tree.getLabel() >= n) {
-				conjunto.add(tree.getLabel());
+				conjunto.add(tree.getLabel()); 
 				recursivo(tree.getLeft(), n, conjunto);
 				recursivo(tree.getRight(), n, conjunto);
 			}else {
@@ -30,7 +30,6 @@ public class Ejercicio2 {
 			}
 	}
 	return conjunto;
-	
 }
 
 
